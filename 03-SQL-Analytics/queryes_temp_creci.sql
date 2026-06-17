@@ -34,11 +34,6 @@ from ventas_mes;
 
 /*MOVING AVERAGE*/
 -- OBJETIVO: Suavizar fluctuaciones.
-/*¿PARA QUÉ SIRVE?
-Porque suaviza:
-ruido
-picos extremos
-variaciones bruscas*/
 with ventas_mes as (
 	select year(str_to_date(order_date, '%d/%m/%y')) as anio,
     month(str_to_date(order_date, '%d/%m/%y')) as mes,
@@ -50,8 +45,6 @@ select *,
 	avg(ventas) over(
 			order by anio, mes
             rows between 2 preceding and current row
-	-- Rows BETWEEN: define que filas mira la ventana
-    -- en este caso "2 PRECENDING", toma 2 anteriores y la actual
         ) as promedio_movil
 from ventas_mes;
 
