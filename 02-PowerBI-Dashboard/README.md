@@ -15,4 +15,4 @@
 - Power Query
 
 ## Visualización de Dasboard
-![Dashboard](dash_ecc1.png)
+![Dashboard](dash_ecc.png)
