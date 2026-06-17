@@ -1,18 +1,4 @@
 -- RFM (Recency Frequecy Monetary)
-/*R = Recency, ¿Qué tan reciente fue su última compra?
-F = Frequency, ¿Cuántas veces compra?
-M = Monetary, ¿Cuánto dinero genera?*/
-/*Es una de las técnicas más usadas para clasificar clientes en:
-VIP
-Leales
-En riesgo
-Perdidos
-
-Y combina exactamente todo lo que ya aprendiste:
-Churn
-CLV
-Frecuencia
-Ingresos*/
 
 -- Recency: para saber primero cuántos días han pasado desde la última compra.
 with ultima_compra as(
