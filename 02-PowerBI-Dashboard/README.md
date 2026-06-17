@@ -4,8 +4,9 @@
 
 - Ventas Totales
 - Ticket Promedio
-- Top Productos
-- Top Clientes
+- Ingresos Totales
+- Total Clientes
+- Porcentaje de riesgo por producto
 
 ## Herramientas
 
