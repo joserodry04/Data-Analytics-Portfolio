@@ -18,4 +18,4 @@ Analizar ventas para encontrar patrones de negocio.
 
 ## Estado
 
-Proyecto en construcción.
+Proyecto en proceso de mejora.
