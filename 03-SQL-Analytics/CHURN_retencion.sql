@@ -1,6 +1,3 @@
-/*¿QUÉ ES CHURN?
-Clientes que: dejaron de usar/comprar.*/
-
 /*OBJETIVO
 Encontrar: clientes “perdidos”.*/
 
@@ -12,7 +9,7 @@ with ultima_compra as (
     group by customer_id
 )
 select *, 
-	datediff( -- DATEDIFF calcula la diferencia entre fechas
+	datediff( 
 		(select max(str_to_date(order_date, '%d/%m/%Y')) 
         from retail), ultima_fecha
     ) as dias_inactivo
