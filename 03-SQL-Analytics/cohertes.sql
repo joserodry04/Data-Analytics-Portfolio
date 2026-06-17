@@ -1,9 +1,4 @@
 -- COHORT Analisis
-/*¿QUÉ ES UNA COHORTE? un grupo de usuarios
-que comparte una característica. En este caso sería: Grupo de clientes que: comenzaron en el mismo periodo.
-¿PARA QUÉ?
-Porque puedes analizar: comportamiento por generación de clientes.*/
-
 
 -- Primera Compra
 with primera_compra as (
@@ -16,23 +11,17 @@ from primera_compra;
 
 -- MEs de primera compra
 with primera_venta as (
-	select customer_id, min(str_to_date(order_date, '%d/%m/%Y')) as primera_fecha -- Se convierte en fecha para evitar errores
+	select customer_id, min(str_to_date(order_date, '%d/%m/%Y')) as primera_fecha 
     from retail
     group by customer_id
 )
 select 
 	customer_id, 
-    year(primera_fecha) as anio, -- se debe poner Y en mayúscula para que el año sea el correcto
+    year(primera_fecha) as anio, 
     month(primera_fecha) as mes
 from primera_venta;
 
 -- Ver cuantos clientes regresaron
-/*INTERPRETACIO
-| total_compras           |
-| ----------------------- |
-| 1 → cliente no volvió   |
-| 10 → cliente recurrente |
-*/
 with primera_compra as (
 	select customer_id,
 		min(str_to_date(order_date, '%d/%m/%Y')) as primera_fecha
@@ -51,13 +40,13 @@ order by total_compras;
 /*¿Qué cohortes retienen mejor clientes?*/
 -- coherte de cliente
 with cohortes as (
-	select customer_id, min(str_to_date(order_date, '%d/%m/%Y')) as primera_fecha -- Se convierte en fecha para evitar errores
+	select customer_id, min(str_to_date(order_date, '%d/%m/%Y')) as primera_fecha 
     from retail
     group by customer_id
 )
 select 
 	customer_id, 
-    year(primera_fecha) as anio_coherte, -- se debe poner Y en mayúscula para que el año sea el correcto
+    year(primera_fecha) as anio_coherte, 
     month(primera_fecha) as mes_coherte
 from cohortes;
 -- compras futuras
