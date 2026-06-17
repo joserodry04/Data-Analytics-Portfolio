@@ -1,3 +1,17 @@
-# Power BI Dashboard
+# Dashboard Power BI
 
-Proyecto de visualización de datos con Power BI.
+## KPIs
+
+- Ventas Totales
+- Ticket Promedio
+- Top Productos
+- Top Clientes
+
+## Herramientas
+
+- Power BI
+- DAX
+- Power Query
+
+## Visualización de Dasboard
+![Dashboard](dash_ecc1.png)
